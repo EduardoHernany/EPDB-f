@@ -18,5 +18,8 @@ jobs:
       with:
         node-version: '18' 
 
+    - name: Down conteiner
+      run: docker-compose down
+      
     - name: Run conteiner
       run: docker-compose up -d --build
