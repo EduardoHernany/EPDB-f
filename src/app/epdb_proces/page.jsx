@@ -29,7 +29,7 @@ export default function Home() {
     formData.append('gridcenter', gridcenter);
 
     try {
-      const response = await axios.post('http://0.0.0.0:8000/api/epdb/', formData, {
+      const response = await axios.post('https://ttc-epdb-b.devapi.app.br/api/epdb/', formData, {
         responseType: 'blob', 
       });
 
