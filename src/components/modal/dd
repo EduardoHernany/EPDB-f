@@ -1,0 +1,71 @@
+/*
+
+import React from "react";
+import * as DialogPrimitive from "@radix-ui/react-dialog"
+
+import * as Dialog from "@radix-ui/react-dialog";
+import Typography from "../typography/Typography";
+import Button from "../Button/Button";
+
+
+
+export type ModalProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
+    overlay?: boolean;
+};
+
+
+
+
+export const Modal = ({ children, ...props }: ModalProps) => {
+    return (
+        <Dialog.Root>
+            <Dialog.Trigger >
+                <Button icon="settings" iconColor="#ffffff" variant="primary-6">
+                    Click me
+                </Button>
+            </Dialog.Trigger>
+            <Dialog.Portal>
+                <Dialog.Overlay className="fixed inset-0 w-full h-full bg-black opacity-40" />
+                <Dialog.Content className="fixed bg-purple-300 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] px-4 w-full min-w-[356px] max-w-lg">
+                    <div className="bg-customRed-50 rounded-md shadow-lg px-4 py-6 sm:flex">
+
+                        <div className="mt-2 text-center sm:ml-4 sm:text-left">
+
+                            <div>
+                                <Dialog.Title >
+                                    <Typography className='text-purple-700'>Header</Typography>
+                                </Dialog.Title>
+                            </div>
+
+                            <div>
+                                <Dialog.Description className="mt-2 text-sm leading-relaxed text-gray-500">
+                                    Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc
+                                    eget lorem dolor sed viverra ipsum nunc. venenatis.
+                                </Dialog.Description>
+                            </div>
+                            <div className="items-center gap-2 mt-3 text-sm sm:flex">
+                                Footer:
+                                <Dialog.Close asChild>
+                                    <button className="w-full mt-2 p-2.5 flex-1 text-white bg-customRed-500 bg-red-600 rounded-md ring-offset-2 ring-red-600 focus:ring-2">
+                                        Delete
+                                    </button>
+                                </Dialog.Close>
+                                <Dialog.Close asChild>
+                                    <button
+                                        aria-label="Close"
+                                        className="w-full mt-2 p-2.5 flex-1 text-gray-800 rounded-md border ring-offset-2 ring-indigo-600 focus:ring-2"
+                                    >
+                                        Cancel
+                                    </button>
+                                </Dialog.Close>
+                            </div>
+                        </div>
+                    </div>
+                </Dialog.Content>
+            </Dialog.Portal>
+        </Dialog.Root>
+    )
+}
+
+*/

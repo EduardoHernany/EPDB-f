@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "4343:3000"
+    environment:
+      - NEXTAUTH_URL=https://www.plasmodocking-labioquim.unir.br
+      - NEXTAUTH_SECRET="secredo"

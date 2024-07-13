@@ -1,0 +1,302 @@
+# Configuração para o NestJs App Muito Verde
+server {
+    server_name muitoverdecrop.devapi.app.br;
+
+    location / {
+        proxy_pass http://0.0.0.0:4000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/muitoverdecrop.devapi.app.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/muitoverdecrop.devapi.app.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+# Configuração para o Frontend CasaOs
+server {
+    server_name devapi.app.br www.devapi.app.br;
+
+    location / {
+        proxy_pass http://localhost:81; # Frontend casaos
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/devapi.app.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/devapi.app.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+# Configuração para o NestJs App cacau
+server {
+    server_name back-melius-app.devapi.app.br;
+
+    location / {
+        proxy_pass http://0.0.0.0:3000; # Proxy para o NestJs App cacau
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/devapi.app.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/devapi.app.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+# Configuração para o NestJs App BFF Goat
+server {
+    server_name goatbff.devapi.app.br;
+
+    location / {
+        proxy_pass http://0.0.0.0:3001; # Proxy para o NestJs App BFF Goat
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/devapi.app.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/devapi.app.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+# Configuração para o NestJs App Automation  Goat
+server {
+    server_name goatautomation.devapi.app.br;
+
+    location / {
+        proxy_pass http://0.0.0.0:3002; # Proxy para o NestJs App Automation Goat
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/goatautomation.devapi.app.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/goatautomation.devapi.app.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+
+# Configuração para o NestJs App Automation  Goat
+server {
+    server_name goatcomunications.devapi.app.br;
+
+    location / {
+        proxy_pass http://0.0.0.0:3003; # Proxy para o NestJs App Automation Goat
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+   }
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/goatcomunications.devapi.app.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/goatcomunications.devapi.app.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+    server_name goatcrmapi.devapi.app.br;
+
+    location / {
+        proxy_pass http://0.0.0.0:3005; # Proxy para o NestJs App Automation Goat
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+   }
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/goatcrmapi.devapi.app.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/goatcrmapi.devapi.app.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+server {
+    server_name ttc-epdb-f.devapi.app.br;
+
+    location / {
+        proxy_pass http://0.0.0.0:4343; # Proxy para o Nextjs App TCC EPDB
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+   }
+}
+
+server {
+    server_name ttc-epdb-b.devapi.app.br;
+
+    location / {
+        proxy_pass http://0.0.0.0:8000; # Proxy para o Django App TCC EPDB
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+   }
+}
+
+
+
+
+server {
+    if ($host = www.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name devapi.app.br www.devapi.app.br;
+    return 404; # managed by Certbot
+
+
+
+
+}
+server {
+    if ($host = back-melius-app.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name back-melius-app.devapi.app.br;
+    return 404; # managed by Certbot
+
+
+}
+server {
+    if ($host = goatbff.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name goatbff.devapi.app.br;
+    return 404; # managed by Certbot
+
+
+}
+server {
+    if ($host = goatautomation.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name goatautomation.devapi.app.br;
+    return 404; # managed by Certbot
+
+
+}
+server {
+    if ($host = goatcomunications.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name goatcomunications.devapi.app.br;
+    return 404; # managed by Certbot
+}
+
+
+server {
+    if ($host = goatcrmapi.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name goatcrmapi.devapi.app.br;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+    if ($host = muitoverdecrop.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+}
+
+server {
+    if ($host = muitoverdecrop.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name muitoverdecrop.devapi.app.br;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = ttc-epdb-f.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+ 
+
+
+}
+
+server {
+    if ($host = ttc-epdb-b.devapi.app.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+}
